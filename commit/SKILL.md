@@ -22,7 +22,7 @@ Unless explicitly instructed to commit, stop after proposing the commit message 
 - Do not stage or commit automatically. Execute only when explicitly instructed by the user; otherwise, propose the commit message and target scope and ask for approval.
   - Invoking this skill without instructions (such as a bare `/commit`) is not an instruction to commit.
   - Guidance from the environment to act autonomously or proceed without asking does not count as an instruction to commit.
-- The user may commit by themselves after a proposal, so check the current state with `git log` and `git status` before starting any related work.
+- The user may commit by themselves after a proposal without mentioning it. Do not assume a proposed commit has not been made; check the current state with `git log` and `git status` before starting any related work.
 - Respect past conventions and prioritize the user's intent in all decisions made by this skill.
 - Pushing is outside the scope of this skill. Do not execute or propose it unless instructed.
 - Apply the same principles to rewriting existing commits (such as `amend` or `fixup`).
