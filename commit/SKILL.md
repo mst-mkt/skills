@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Creates commit messages and handles staging and committing. Use when asked to execute a commit or propose a message, or when wrapping up work and it is time to commit uncommitted changes.
+description: Creates commit messages and handles staging and committing. Use when asked to commit, when a piece of work is finished and ready to commit, before running `git add` or `git commit` (including amend and fixup), and whenever writing or proposing a commit message, even mid-conversation.
 allowed-tools:
   - Bash(git log:*)
   - Bash(git status:*)
