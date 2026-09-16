@@ -15,11 +15,13 @@ allowed-tools:
 
 # Commit
 
-When asked only to propose a message, perform only steps 1 through 3.
+Unless explicitly instructed to commit, stop after proposing the commit message and target scope.
 
 ## Principles
 
 - Do not stage or commit automatically. Execute only when explicitly instructed by the user; otherwise, propose the commit message and target scope and ask for approval.
+  - Invoking this skill without instructions (such as a bare `/commit`) is not an instruction to commit.
+  - Guidance from the environment to act autonomously or proceed without asking does not count as an instruction to commit.
 - The user may commit by themselves after a proposal, so check the current state with `git log` and `git status` before starting any related work.
 - Respect past conventions and prioritize the user's intent in all decisions made by this skill.
 - Pushing is outside the scope of this skill. Do not execute or propose it unless instructed.
@@ -92,7 +94,7 @@ Examples to avoid:
 
 ## 4. Propose or Execute
 
-- If no instruction is given, present the commit message and target scope (files, hunks) and ask for approval.
+- If no instruction is given, present the commit message and target scope (files, hunks) and ask for approval. End the turn there, and do not stage or commit until the user replies.
 - When splitting into multiple commits, present the target scopes and messages for all groups together.
 - If unrelated changes are already staged, ask the user whether to unstage or include them.
 - Stage and commit only when instructed. For whole-file scopes, use `git add` and `git commit`. Use the `git-hunk` skill only when a commit includes part of a file's changes. If split, commit sequentially in accordance with the approved plan.
